@@ -60,7 +60,7 @@ func (jt *JiebaTokenizer) Tokenize(input []byte) analysis.TokenStream {
 	pos := 1
 	var width int
 	var gram string
-	for word := range jt.seg.Cut(string(input), jt.hmm) {
+	for word := range jt.seg.CutForSearch(string(input), jt.hmm) {
 		if jt.searchMode {
 			runes := []rune(word)
 			width = len(runes)
